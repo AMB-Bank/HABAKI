@@ -335,7 +335,7 @@ function placeDoor(d,c){const w=wallDir(c),cx=ctr(c[0]),cz=ctr(c[1]);if(!w){d.po
 function far(ds,min,pool){pool=pool||HF;let best=null,bd=-1;for(let i=0;i<400;i++){const c=rnd(pool),m=Math.min(...ds.map(d=>d[c[1]][c[0]]));if(m>=min)return c;if(m>bd){bd=m;best=c}}return best}
 function startGame0(){buildMaze();over=false;time=0;nextFake=12;$('cr').style.display='none';$('bd').style.display='none';$('menu').style.display='none';
  P.forEach((p,i)=>{p.alive=true;const dd=ovs[i].querySelector('.dead');dd.style.display='none';dd.textContent='ПОЙМАН';dd.style.color='#f33';ovs[i].querySelector('.dlg').style.display='none';ovs[i].querySelector('.scare').style.display='none'});
- const a=rnd(HF),da=bfs(...a);let b=rnd(HF);for(let i=0;i<200&&da[b[1]][b[0]]<40;i++)b=rnd(free);
+ const a=rnd(HF),da=bfs(...a);let b=NET.on?a:rnd(HF);for(let i=0;i<200&&!NET.on&&da[b[1]][b[0]]<40;i++)b=rnd(free);
  [a,b].forEach((c,i)=>{P[i].x=ctr(c[0]);P[i].z=ctr(c[1]);P[i].a=Math.random()*6.28;P[i].cy=P[i].a;P[i].cp=0;P[i].mag=0});
  ex=far([da,bfs(...b)],70,wp(HF));placeDoor(ogre,ex);
  {const nc=far([da,bfs(...b)],25);npc.x=ctr(nc[0]);npc.z=ctr(nc[1]);npc.tc=null;npc.cool=[0,0]}
