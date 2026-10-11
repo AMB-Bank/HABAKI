@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" xmlns:c2pa="http://c2pa.org/manifest">
+<defs>
+<radialGradient id="bg" cx="50%" cy="38%" r="75%"><stop offset="0" stop-color="#5a0a14"/><stop offset=".55" stop-color="#1c0409"/><stop offset="1" stop-color="#030103"/></radialGradient>
+<radialGradient id="moon" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff3c4"/><stop offset=".6" stop-color="#e9c46a"/><stop offset="1" stop-color="#e9c46a" stop-opacity="0"/></radialGradient>
+<filter id="g" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<clipPath id="r"><rect width="1024" height="1024" rx="190"/></clipPath>
+</defs>
+<g clip-path="url(#r)">
+<rect width="1024" height="1024" fill="url(#bg)"/>
+<circle cx="512" cy="300" r="230" fill="url(#moon)" opacity=".55"/>
+<g fill="#000" opacity=".9"><path d="M0 760 L120 640 L130 760Z"/><path d="M60 770 Q70 600 120 560 Q100 640 150 770Z"/><path d="M900 770 Q930 600 980 540 Q960 640 1024 770Z"/></g>
+<path d="M230 780 V430 L330 430 L330 360 L400 360 L512 190 L624 360 L694 360 L694 430 L794 430 V780Z" fill="#050204" stroke="#2a0a10" stroke-width="6"/>
+<path d="M360 360 L512 190 L664 360" fill="none" stroke="#1a070c" stroke-width="10"/>
+<g filter="url(#g)">
+<path d="M330 480 Q380 440 440 500 Q400 540 330 520Z" fill="#ffd54a"/>
+<path d="M694 480 Q644 440 584 500 Q624 540 694 520Z" fill="#ffd54a"/>
+<circle cx="392" cy="494" r="16" fill="#8b0000"/><circle cx="632" cy="494" r="16" fill="#8b0000"/>
+</g>
+<path d="M300 640 L340 600 L380 650 L420 596 L460 652 L500 598 L540 654 L580 598 L620 652 L660 600 L700 646 L724 640 V780 H300Z" fill="#7a0010" filter="url(#g)"/>
+<path d="M300 640 L340 600 L380 650 L420 596 L460 652 L500 598 L540 654 L580 598 L620 652 L660 600 L700 646 L724 640 L724 690 L300 690Z" fill="#c1121f" opacity=".55"/>
+<rect x="470" y="690" width="84" height="90" rx="10" fill="#000"/>
+<rect y="780" width="1024" height="244" fill="#030103"/>
+<text x="512" y="905" text-anchor="middle" font-family="DejaVu Serif, Georgia, serif" font-weight="bold" font-size="150" letter-spacing="10" fill="#d1111f" filter="url(#g)">ХАБАКИ</text>
+<text x="512" y="965" text-anchor="middle" font-family="DejaVu Serif, Georgia, serif" font-size="38" letter-spacing="8" fill="#e9b4b9" opacity=".8">ЛАБИРИНТ</text>
+</g>
+<rect width="1024" height="1024" rx="190" fill="none" stroke="#c1121f" stroke-width="8" opacity=".6"/>
+</svg>
