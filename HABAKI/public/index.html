@@ -52,9 +52,9 @@ body.touch .dlg{bottom:auto;top:16%;max-height:68%;overflow:auto}body.touch .dlg
 input{-webkit-user-select:text;user-select:text}#mb{display:none;position:fixed;top:max(8px,env(safe-area-inset-top));left:calc(50% + 34px);width:46px;height:46px;border-radius:50%;background:#000a;border:1px solid #fff5;color:#fff;font-size:20px;align-items:center;justify-content:center;z-index:12}
 
 /* ===================== iOS-стиль (Liquid Glass) ===================== */
-:root{--ac:#ff453a;--ac2:#ff6a5f;--tx:#fff;--tx2:rgba(235,235,245,.62);--gl:rgba(34,34,40,.52);--gl2:rgba(255,255,255,.12);--ln:rgba(255,255,255,.16);--sp:cubic-bezier(.2,.9,.3,1.25)}
+:root{--ac:#ff453a;--ac2:#ff6a5f;--tx:#fff;--tx2:rgba(235,235,245,.62);--gl:rgba(30,30,36,.78);--gl2:rgba(255,255,255,.09);--ln:rgba(255,255,255,.09);--sp:cubic-bezier(.2,.9,.3,1.25)}
 html,body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;font-synthesis:none}
-.glass{background:var(--gl);-webkit-backdrop-filter:blur(30px) saturate(180%);backdrop-filter:blur(30px) saturate(180%);border:1px solid var(--ln);border-radius:30px;box-shadow:0 18px 50px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(255,255,255,.05);color:var(--tx);box-sizing:border-box}
+.glass{background:var(--gl);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--ln);border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.4);color:var(--tx);box-sizing:border-box}
 @keyframes rise{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
 .glass{animation:rise .55s var(--sp) both}
 #splash,#menu,#auth{background:transparent;overflow-y:auto;-webkit-overflow-scrolling:touch;justify-content:safe center}
@@ -64,11 +64,11 @@ h1{font-weight:800;letter-spacing:.14em;color:#fff;font-size:clamp(34px,8vw,84px
 .tag{font-size:clamp(12px,1.9vw,17px);color:var(--tx2);letter-spacing:.04em;min-height:1.4em;margin-top:2px;transition:opacity .4s;text-align:center}
 .hero{padding:30px 34px;display:flex;flex-direction:column;align-items:center;gap:14px;max-width:min(92vw,520px);text-align:center}
 .hero .creators{color:#ffb3ad;margin:0;font-size:clamp(14px,2.4vw,19px);letter-spacing:.05em}.hero .warn{color:#ff9f0a;margin:0;font-size:14px;line-height:1.4}
-button,select{font-family:inherit;text-transform:none;letter-spacing:0;font-size:17px;font-weight:600;color:#fff;border:1px solid var(--ln);border-radius:999px;padding:13px 26px;min-width:0;cursor:pointer;background:var(--gl2);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:inset 0 1px 0 rgba(255,255,255,.2);transition:transform .35s var(--sp),background .2s,box-shadow .25s,opacity .2s}
+button,select{font-family:inherit;text-transform:none;letter-spacing:0;font-size:17px;font-weight:600;color:#fff;border:1px solid var(--ln);border-radius:999px;padding:13px 26px;min-width:0;cursor:pointer;background:var(--gl2);-webkit-backdrop-filter:blur(0px);backdrop-filter:blur(0px);box-shadow:inset 0 1px 0 rgba(255,255,255,.06);transition:transform .35s var(--sp),background .2s,box-shadow .25s,opacity .2s}
 button:hover{background:rgba(255,255,255,.2)}button:active{transform:scale(.95);background:rgba(255,255,255,.24)}
-@media(hover:hover){button:hover{transform:translateY(-1px) scale(1.025);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 8px 24px rgba(0,0,0,.35)}}
-button.pri{background:linear-gradient(180deg,var(--ac2),var(--ac) 55%,#d92d22);border-color:rgba(255,255,255,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 28px rgba(255,69,58,.4);font-weight:700}
-button.pri:hover{background:linear-gradient(180deg,#ff7b70,#ff5448 55%,#e5372c);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 12px 34px rgba(255,69,58,.55)}
+@media(hover:hover){button:hover{transform:scale(1.02);box-shadow:0 4px 14px rgba(0,0,0,.3)}}
+button.pri{background:linear-gradient(180deg,var(--ac2),var(--ac) 55%,#d92d22);border-color:rgba(255,255,255,.28);box-shadow:0 6px 16px rgba(255,69,58,.28);font-weight:700}
+button.pri:hover{background:linear-gradient(180deg,#ff7b70,#ff5448 55%,#e5372c);box-shadow:0 8px 20px rgba(255,69,58,.4)}
 button.ghost{background:transparent;box-shadow:none;color:var(--tx2);border-color:transparent}button.ghost:hover{background:var(--gl2);color:#fff}
 button.link{background:none;border:none;box-shadow:none;color:#6cb6ff;font-size:15px;padding:8px;font-weight:500}button.sm{padding:7px 14px;font-size:14px}
 button:disabled{opacity:.5;pointer-events:none}
@@ -108,31 +108,33 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border:0;border-radiu
 .pc b{font-size:18px}.pc small{font-size:12px;color:var(--tx2);font-weight:500;line-height:1.35}
 .pc:hover{background:rgba(255,69,58,.22);border-color:rgba(255,105,95,.7)}
 /* списки настроек */
-#sp{display:none;flex-direction:column;align-items:stretch;gap:14px;padding:18px;width:min(94vw,560px);max-height:calc(100dvh - 120px);overflow-y:auto;border:1px solid var(--ln);border-radius:30px;background:var(--gl)}
+#sp{display:none;flex-direction:column;align-items:stretch;gap:14px;padding:18px;width:min(94vw,560px);max-height:calc(100dvh - 120px);overflow-y:auto;border:1px solid var(--ln);border-radius:22px;background:var(--gl)}
 #sp>*{flex:none}#sp .grp{background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden}#sp .grp h4{margin:0;padding:12px 16px 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2);font-weight:600}
 #sp label{display:flex;justify-content:space-between;gap:14px;align-items:center;font-size:16px;padding:10px 16px;border-top:1px solid rgba(255,255,255,.08)}#sp .grp h4+label{border-top:none}
 #sp .grp>button{display:block;width:calc(100% - 24px);margin:6px 12px 10px}
-#how,#net{display:none;padding:22px;width:min(94vw,560px);max-height:calc(100dvh - 130px);overflow-y:auto;line-height:1.6;font-size:15px;text-align:left;border:1px solid var(--ln);border-radius:30px;background:var(--gl);box-sizing:border-box}#how b,#net b{font-size:20px}
+#how,#net{display:none;padding:22px;width:min(94vw,560px);max-height:calc(100dvh - 130px);overflow-y:auto;line-height:1.6;font-size:15px;text-align:left;border:1px solid var(--ln);border-radius:22px;background:var(--gl);box-sizing:border-box}#how b,#net b{font-size:20px}
 #net{text-align:center}#net button{margin-top:8px}#nc{width:130px;text-align:center;font-size:24px;letter-spacing:.2em;padding:10px;margin-top:8px}
 .lbrows{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}.lbrows li{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.07);border-radius:16px;padding:10px 14px}.lbrows li i{font-style:normal;width:26px;font-weight:800;color:var(--tx2)}.lbrows li:nth-child(1) i{color:#ffd60a}.lbrows li:nth-child(2) i{color:#d1d1d6}.lbrows li:nth-child(3) i{color:#ff9f0a}
 .lbrows li span{flex:1;font-weight:600;text-align:left;overflow:hidden;text-overflow:ellipsis}.lbrows li em{font-style:normal;color:var(--tx2);font-size:13px}.lbrows li b{font-variant-numeric:tabular-nums}
 /* пауза / титры */
-#pause{background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}#pause label{display:flex;align-items:center;gap:14px;font-size:16px;color:var(--tx2)}
+#pause{background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}#pause label{display:flex;align-items:center;gap:14px;font-size:16px;color:var(--tx2)}
 #pause button{min-width:min(78vw,300px)}
 #crb button{min-width:140px;padding:13px 24px}
-.dlg{background:rgba(28,28,32,.7);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);border:1px solid var(--ln);border-radius:24px}.dlg button{font-size:16px;padding:10px 16px}
+.dlg{background:rgba(28,28,32,.7);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--ln);border-radius:24px}.dlg button{font-size:16px;padding:10px 16px}
 .lbl{top:10px;left:12px;background:rgba(0,0,0,.45);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);padding:5px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.14);font-size:14px;letter-spacing:.06em}
 .ov small.sp{display:inline-block;margin:44px 0 0 12px;padding:5px 12px;background:rgba(0,0,0,.45);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-radius:999px;border:1px solid rgba(255,255,255,.12);font-size:13px}.ov small.sp:empty{display:none}
 .ov br{display:none}.pop{display:flex;justify-content:center}.pop:not(:empty){}
 .dead{backdrop-filter:blur(3px);letter-spacing:.04em}
-#pb,#mb{background:rgba(0,0,0,.4);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+#pb,#mb{background:rgba(0,0,0,.4);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 @media(max-width:700px){#mm{flex-direction:column;flex-wrap:nowrap}.cards{gap:8px}.pc img{width:60px;height:60px}.pc b{font-size:15px}.tile b{font-size:28px}}
 @media(max-height:560px){h1{font-size:clamp(24px,8vh,48px)}.tag{display:none}.profile,.actions{padding:12px}.profile{gap:10px}.tile{padding:8px 10px}.tile b{font-size:22px}.tile span{font-size:10px;margin-top:3px}.actions{gap:6px}.actions button{padding:9px 16px;font-size:15px}.actions button.pri{padding:12px 16px;font-size:17px}.ava{width:40px;height:40px;font-size:18px}.card{padding:14px;max-height:calc(100dvh - 70px)}.hero{padding:16px 22px;gap:8px}#sp,#how,#net{max-height:calc(100dvh - 60px)}.full{padding:8px!important;gap:6px!important}.best{display:none}}
 .logo{width:96px;height:96px;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.14)}.logo.sm{width:64px;height:64px;border-radius:15px;margin-bottom:8px}@media(max-height:560px){.logo{width:48px;height:48px;border-radius:11px}.logo.sm{display:none}}
 
 .full{padding-left:max(16px,env(safe-area-inset-left))!important;padding-right:max(16px,env(safe-area-inset-right))!important;padding-bottom:max(16px,env(safe-area-inset-bottom))!important}
-#rot{display:none;position:fixed;left:50%;top:calc(max(8px,env(safe-area-inset-top)) + 58px);transform:translateX(-50%);z-index:13;padding:9px 16px;border-radius:999px;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--ln);color:#fff;font-size:14px;white-space:nowrap;pointer-events:none;animation:rise .5s var(--sp)}
+#rot{display:none;position:fixed;left:50%;top:calc(max(8px,env(safe-area-inset-top)) + 58px);transform:translateX(-50%);z-index:13;padding:9px 16px;border-radius:999px;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid var(--ln);color:#fff;font-size:14px;white-space:nowrap;pointer-events:none;animation:rise .5s var(--sp)}
 @media(max-height:560px){.auth{gap:8px}.auth input{padding:9px 14px;font-size:16px}.auth .hint{display:none}.err{min-height:0;font-size:13px}.auth button.pri{padding:11px}.seg button{padding:7px}.card h2{font-size:19px;margin:0}.cards{gap:8px}.pc{padding:8px 4px}.pc img{width:48px;height:48px}.pc .duo img{width:38px;height:38px}.pc small{display:none}.pc b{font-size:15px}#pick .hint{display:none}.card{gap:8px}#sp label{padding:7px 14px}}
+
+#gmrow{display:flex;flex-direction:column;align-items:center;gap:6px;margin:6px 0 2px}#gmrow small{opacity:.7;max-width:340px}
 </style></head><body>
 <div id="splash" class="full"><div class="glass hero"><img src="icons/icon-192.png" alt="" class="logo"><h1>ХАБАКИ</h1><p class="creators">Создатели: Арсен и Дамир</p><p class="warn">⚠ Громкие звуки и вспышки (скримеры). Рекомендуется со звуком.</p><button class="pri" id="enter">Войти в дом</button></div></div>
 
@@ -160,12 +162,14 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border:0;border-radiu
  <button class="pc" data-p="1"><img id="pc1" alt=""><b>Арсен</b><small>один<br>WASD</small></button>
  <button class="pc" data-p="3"><img id="pc2" alt=""><b>Дамир</b><small>один<br>стрелки</small></button>
  <button class="pc" data-p="2"><span class="duo"><img id="pc3" alt=""><img id="pc4" alt=""></span><b>Вдвоём</b><small>один экран<br>пополам</small></button></div>
+ <div id="gmrow"><select id="gm2"><option value="0">Классика</option><option value="1">Прогулка</option><option value="2">Тёмная ночь</option><option value="3">Погоня</option><option value="4">Кошмар</option></select><small id="gmd"></small></div>
  <p class="hint">Одному можно жать и WASD, и стрелки — как удобнее. Играть с другом по сети — кнопка «Онлайн».</p><button class="ghost" id="pk_back">Назад</button></div>
 <div id="lb" class="glass card" style="display:none"><h2>🏆 Лучшие беглецы</h2><ol class="lbrows" id="lbl"></ol><button class="ghost" id="lb_back">Назад</button></div>
 <div id="how" class="glass"><b>Управление</b><br><span class="tch">Левый палец — джойстик: вверх/вниз — идти, влево/вправо — поворот. Справа: ⬆ прыжок, ⚡ рывок, большая кнопка — действие (дверь, шкаф, выход). ⏸ вверху — пауза. Лучше играть в горизонтальном режиме.<br></span><span class="kbd">Арсен: W/S ходьба · A/D поворот · Space прыжок · 4 рывок<br>Дамир: ↑/↓ ходьба · ←/→ поворот · Enter прыжок · 5 рывок<br>Одиночная игра: работают обе раскладки сразу.<br>F1 — пауза · R — открыть дверь · шкаф: Арсен E, Дамир «/» · Q — читы<br></span>Найдите дверь на волю и берегите заряд фонарика 🔋 Выбравшись, гуляйте по полю, где танцует Худай.<br>Прятания в шкафах, бонусы и победы записываются в ваш аккаунт.<br><br><button id="hb2">Назад</button></div>
 <div id="net" class="glass"><b>Игра по сети — 2 игрока</b><br><small>Хозяин играет за Арсена, друг — за Дамира. Друг открывает эту же страницу, входит в свой аккаунт и вводит код.</small><br><button class="pri" id="nh">Создать игру</button><br><input id="nc" inputmode="numeric" maxlength="4" placeholder="код"> <button id="nj">Войти</button><div id="ns" style="min-height:26px;color:#ffd27a;margin-top:6px"></div><button class="ghost" id="nb">Назад</button></div>
 <div id="sp" class="glass">
  <div class="grp"><h4>Игра</h4>
+ <label>Режим игры<select id="s_gm"><option value="0">Классика</option><option value="1">Прогулка</option><option value="2">Тёмная ночь</option><option value="3">Погоня</option><option value="4">Кошмар</option></select></label>
  <label>Агрессивность монстров<select id="s_ag"><option value="0">Лёгкая</option><option value="1" selected>Обычная</option><option value="2">Жёсткая</option><option value="3">Кошмар</option></select></label>
  <label>Количество монстров<select id="s_cnt"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
  <label>Скримеры<select id="s_sc"><option value="0">Нет</option><option value="1">Редко</option><option value="2" selected>Обычно</option><option value="3">Часто</option></select></label>
@@ -177,8 +181,9 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border:0;border-radiu
  <div class="grp"><h4>Звук</h4>
  <label>Музыка<input id="s_mu" type="range" min="0" max="1" step=".05" value=".7"></label>
  <label>Звуки и крики<input id="s_sf" type="range" min="0" max="1" step=".05" value=".9"></label>
- <label>Фоновая музыка<select id="s_mu2"><option value="0">Мрачный эмбиент</option><option value="1">Шкатулка-колыбельная</option><option value="2">Тревожный пульс</option><option value="3">Песня Худая</option><option value="4">Без музыки</option></select></label>
+ <label>Фоновая музыка<select id="s_mu2"><option value="0">Мрачный эмбиент</option><option value="1">Шкатулка-колыбельная</option><option value="2">Тревожный пульс</option><option value="3">Alpha 3 Intro</option><option value="4">Evicted</option><option value="5">Без музыки</option></select></label>
  <label>Шаги<select id="s_st"><option value="1">Вкл</option><option value="0">Выкл</option></select></label>
+ <label>Дрожание камеры, когда монстр рядом<select id="s_shk"><option value="1">Вкл</option><option value="0">Выкл</option></select></label>
  <label>Звуки дома (стуки, шёпот)<select id="s_am"><option value="1">Вкл</option><option value="0">Выкл</option></select></label>
  <button id="nxt">⏭ Следующий трек</button></div>
  <div class="grp"><h4>Графика</h4>
@@ -193,11 +198,11 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border:0;border-radiu
  <button id="rst">Сбросить настройки</button>
  <button class="pri" id="back">Готово</button></div>
 </div>
-<div id="pause" class="full" style="display:none;z-index:15"><h1>ПАУЗА</h1><button class="pri" id="pres">Продолжить (F1)</button><label>Музыка <input id="p_mu" type="range" min="0" max="1" step=".05"></label><label>Звуки <input id="p_sf" type="range" min="0" max="1" step=".05"></label><label>Трек <select id="p_trk"><option value="0">Мрачный эмбиент</option><option value="1">Шкатулка-колыбельная</option><option value="2">Тревожный пульс</option><option value="3">Песня Худая</option><option value="4">Без музыки</option></select></label><button id="pmenu">В главное меню</button></div><div id="cheat"><b>⌨ ЧИТЫ</b> (Esc — закрыть)<br><small>а летать · д летать · бессмертие · а бессмертие · батарея · выход · скример</small><input id="ci" autocomplete="off" placeholder="введите команду и Enter"><div id="cl"></div></div><div id="bd">🎂 С ДНЁМ РОЖДЕНИЯ! 🎂</div>
+<div id="pause" class="full" style="display:none;z-index:15"><h1>ПАУЗА</h1><button class="pri" id="pres">Продолжить (F1)</button><label>Музыка <input id="p_mu" type="range" min="0" max="1" step=".05"></label><label>Звуки <input id="p_sf" type="range" min="0" max="1" step=".05"></label><label>Трек <select id="p_trk"><option value="0">Мрачный эмбиент</option><option value="1">Шкатулка-колыбельная</option><option value="2">Тревожный пульс</option><option value="3">Alpha 3 Intro</option><option value="4">Evicted</option><option value="5">Без музыки</option></select></label><button id="pmenu">В главное меню</button></div><div id="cheat"><b>⌨ ЧИТЫ</b> (Esc — закрыть)<br><small>а летать · д летать · бессмертие · а бессмертие · батарея · выход · скример</small><input id="ci" autocomplete="off" placeholder="введите команду и Enter"><div id="cl"></div></div><div id="bd">🎂 С ДНЁМ РОЖДЕНИЯ! 🎂</div>
 <div id="cr" class="full" style="justify-content:flex-start"><div class="roll" id="roll"></div><div id="crb"><button class="pri" id="again">Заново</button><button id="tomenu">В меню</button></div></div>
 <script src="three.min.js"></script><script src="assets.js"></script><script>window.TOUCH0=matchMedia('(pointer:coarse)').matches;var NET={on:false,host:false,seen:{},out:[],n:0,ac:0,jc:0,dc:0,lc:[0,0,0],inp:[0,0,0,0,0],snap:null,seed:null,fwd:0};function nMe(){return NET.on?(NET.host?0:1):(S.players==3?1:0)}</script>
 <script>
-const $=i=>document.getElementById(i),S={aggr:1,count:2,scares:2,music:.7,sfx:.9,bg:0,mus:1,bright:1.25,pspd:1,drain:1,events:1,bonN:14,steps:1,amb:1,touch:0,players:0,csize:1,q:(window.TOUCH0?1.25:2),vib:1,ver:2},AG=[.8,1,1.25,1.5],FQ=[0,40,22,9];
+var MB=null;const $=i=>document.getElementById(i),S={aggr:1,count:2,scares:2,music:.7,sfx:.9,bg:0,mus:1,bright:1.25,pspd:1,drain:1,events:1,bonN:14,steps:1,amb:1,touch:0,players:0,csize:1,q:(window.TOUCH0?1.25:2),vib:1,gm:0,shk:1,ver:2},AG=[.8,1,1.25,1.5],FQ=[0,40,22,9];
 const CS=2.5,N=39,NX=178,WX=121,RX=57,RL=6,FY=4,WH=6,FW=56,yoff=x=>FY*Math.floor(Math.min(1,Math.max(0,(x-RX*CS)/(RL*CS)))*10)/10,D4=[[1,0],[-1,0],[0,1],[0,-1]],rnd=a=>a[Math.floor(Math.random()*a.length)];
 const g=[];for(let i=0;i<N;i++)g.push(Array(NX).fill(1));const free=[];
 function carve(x,y){g[y][x]=0;[[2,0],[-2,0],[0,2],[0,-2]].sort(()=>Math.random()-.5).forEach(([a,b])=>{const nx=x+a,ny=y+b;if(nx>0&&ny>0&&nx<NX-1&&ny<N-1&&g[ny][nx]){g[y+b/2][x+a/2]=0;carve(nx,ny)}})}
@@ -287,13 +292,37 @@ const GEN=[0,1,2,3].map(faceImg),POOL=[IMG.C,IMG.C,IMG.K,IMG.E,IMG.P1,IMG.P2,IMG
 
 // ===== audio =====
 let AC,mg,padG,mode='none',bt;const dc=new Float32Array(256).map((_,i)=>Math.tanh((i/128-1)*10));
+const AUD={};[['a3','alpha3'],['ev','evicted'],['win','nostalgia'],['near','near'],['chase','chase']].forEach(([k,f])=>{const a=new Audio('audio/'+f+'.mp3');a.preload='none';a.loop=true;AUD[k]=a});
+const NAUD={near:0,chase:0},bgVol=()=>S.music*.6,winVol=()=>S.music*.7;
+function vol(a,v){v=Math.max(0,v);if(AC&&!a._g){try{const g=AC.createGain();AC.createMediaElementSource(a).connect(g);g.connect(AC.destination);a._g=g;a.volume=1}catch(e){}}if(a._g)a._g.gain.value=v;else a.volume=Math.min(1,v)}
+function applyVol(){vol(AUD.a3,bgVol());vol(AUD.ev,bgVol());vol(AUD.win,winVol());vol(AUD.near,S.music*.9*NAUD.near);vol(AUD.chase,S.music*.95*NAUD.chase)}
+function stopDyn(){NAUD.near=NAUD.chase=0;AUD.near.pause();AUD.chase.pause()}
+function winPlay(){[AUD.a3,AUD.ev].forEach(a=>a.pause());stopDyn();vol(AUD.win,winVol());if(AUD.win.paused){AUD.win.currentTime=0;AUD.win.play().catch(()=>{})}}
+let _pa=[];function pauseAud(on){if(on){_pa=Object.values(AUD).filter(a=>!a.paused);_pa.forEach(a=>a.pause())}else{_pa.forEach(a=>a.play().catch(()=>{}));_pa=[]}}
+function dynAudio(dt){P.forEach(p=>p.shk=0);let tn=0,tc=0;
+ if(state==='play'&&!over&&!paused){(solo()?[P[nMe()]]:P).forEach(p=>{if(!p.alive||p.out)return;let dm=1e9;M.forEach(m=>{if(!m.on)return;const g=m.g.position,d=Math.hypot(g.x-p.x,g.z-p.z);if(d<dm)dm=d});
+  if(!p.hid&&dm<(NAUD.chase>.3?17:13)){tc=1;p.shk=.3+Math.min(1,Math.max(0,(17-dm)/14))*.7}
+  else if(dm<34){const n=Math.min(1,(34-dm)/26);tn=Math.max(tn,n);p.shk=.12+n*.45}})}
+ if(tc)tn=0;
+ NAUD.chase+=Math.max(-dt*1.2,Math.min(dt*2,tc-NAUD.chase));NAUD.near+=Math.max(-dt*1.2,Math.min(dt*.8,tn-NAUD.near));
+ [[AUD.chase,NAUD.chase,.95],[AUD.near,NAUD.near,.9]].forEach(([a,v,k])=>{if(v>.01){vol(a,S.music*k*v);if(a.paused)a.play().catch(()=>{})}else if(!a.paused)a.pause()})}
+const MODES=[{n:'Классика',d:'Как в настройках',o:null},
+ {n:'Прогулка',d:'1 спокойный монстр, фонарик не садится, много бонусов',o:{aggr:0,count:1,scares:1,drain:0,bonN:26}},
+ {n:'Тёмная ночь',d:'Фонарик садится вдвое быстрее, бонусов мало, пугалок больше',o:{drain:2,bonN:6,scares:3}},
+ {n:'Погоня',d:'3 монстра, но вы бегаете быстрее. Не останавливайтесь!',o:{aggr:2,count:3,pspd:1.25,drain:.5}},
+ {n:'Кошмар',d:'4 монстра, жёсткий ИИ, мало заряда и бонусов',o:{aggr:3,count:4,scares:3,drain:2,bonN:6}}];
+function modeApply(){if(MB){Object.assign(S,MB);MB=null}const m=MODES[S.gm|0]||MODES[0];if(m.o){MB={};for(const k in m.o){MB[k]=S[k];S[k]=m.o[k]}}}
 function audioInit(){if(AC)return;AC=new(window.AudioContext||window.webkitAudioContext)();mg=AC.createGain();mg.gain.value=S.music;mg.connect(AC.destination);padG=AC.createGain();padG.gain.value=0;padG.connect(mg);
  [55,55.9,82.4,110.7].forEach(f=>{const o=AC.createOscillator(),fl=AC.createBiquadFilter(),gg=AC.createGain();o.type='sawtooth';o.frequency.value=f;fl.type='lowpass';fl.frequency.value=240;gg.gain.value=.1;o.connect(fl).connect(gg).connect(padG);o.start()});
  setInterval(()=>{if((mode==='menu'||mode==='game')&&S.mus===0&&Math.random()<.5)plink()},1800);let ms=0;setInterval(()=>{if((mode!=='menu'&&mode!=='game')||S.mus<1||S.mus>2)return;ms++;const t=AC.currentTime;if(S.mus===1){const NN=[69,72,76,81,79,76,72,76,67,71,74,79,77,74,71,74],n=NN[ms%16]+(Math.random()<.07?1:0);if(ms%2===0||Math.random()<.35)bell(440*Math.pow(2,(n-69)/12),t,.2)}else{if(ms%4===0)thump(.45);if(ms%2===1)hat(t);if(ms%8===0||ms%8===3)bass(ms%16<8?55:49,t)}},320)}
 function env(o,g2,t,d,v){g2.gain.setValueAtTime(v,t);g2.gain.exponentialRampToValueAtTime(.001,t+d);o.start(t);o.stop(t+d)}
 function plink(){const o=AC.createOscillator(),gg=AC.createGain();o.type='sine';o.frequency.value=rnd([220,233,277,311,415,466]);o.connect(gg).connect(mg);env(o,gg,AC.currentTime,2.5,.12)}
 function thump(v){if(!AC)return;const o=AC.createOscillator(),gg=AC.createGain(),t=AC.currentTime;o.frequency.setValueAtTime(80,t);o.frequency.exponentialRampToValueAtTime(35,t+.2);o.connect(gg).connect(AC.destination);env(o,gg,t,.25,v*S.sfx)}
-function setMode(m){mode=m;if(!AC)return;const pb=m==='menu'?.6:m==='game'?.3:0;padG.gain.setTargetAtTime(S.mus===0?pb:S.mus<3?pb*.4:0,AC.currentTime,.4);if(m==='happy'){song.currentTime=0;song.volume=Math.min(1,S.music*.45);song.play().catch(()=>{})}else if((m==='menu'||m==='game')&&S.mus===3){song.volume=Math.min(1,S.music*.45);song.play().catch(()=>{})}else song.pause()}
+function setMode(m){mode=m;if(!AC)return;const pb=m==='menu'?.6:m==='game'?.3:0;padG.gain.setTargetAtTime(S.mus===0?pb:S.mus<3?pb*.4:0,AC.currentTime,.4);
+ const bg=S.mus===3?AUD.a3:S.mus===4?AUD.ev:null,onBG=m==='menu'||m==='game';
+ [AUD.a3,AUD.ev].forEach(a=>{if(a!==bg||!onBG)a.pause()});if(m!=='game')stopDyn();
+ if(m==='game')['near','chase','win'].forEach(k=>{if(AUD[k].preload!=='auto'){AUD[k].preload='auto';AUD[k].load()}});
+ if(m==='happy')winPlay();else{AUD.win.pause();if(bg&&onBG){vol(bg,bgVol());bg.play().catch(()=>{})}}}
 function bday(){const n=[67,67,69,67,72,71,67,67,69,67,74,72,67,67,79,76,72,71,69,77,77,76,72,74,72],d=[.75,.25,1,1,1,2,.75,.25,1,1,1,2,.75,.25,1,1,1,1,2,.75,.25,1,1,1,2];let t=AC.currentTime+.2;
  n.forEach((m,i)=>{const f=440*Math.pow(2,(m-69)/12);[[f,'triangle',.25],[f/2,'sine',.12]].forEach(([fr,ty,v])=>{const o=AC.createOscillator(),gg=AC.createGain();o.type=ty;o.frequency.value=fr;o.connect(gg).connect(mg);env(o,gg,t,d[i]*.5*.95,v)});t+=d[i]*.5});
  setTimeout(()=>mode==='happy'&&bday(),(t-AC.currentTime)*1000+500)}
@@ -324,7 +353,7 @@ function scare(i,ms,fatal,src){if(NET.on&&!NET.host&&!NET.fwd)return;if(NET.on&&
  (function f(){const t=performance.now()-t0;if(t>ms){e.style.display='none';if(fatal)ovs[i].querySelector('.dead').style.display='flex';return}
  im.style.transform=`scale(${1+t/ms*(fatal?1:.4)}) translate(${(Math.random()-.5)*40}px,${(Math.random()-.5)*40}px)`;e.style.background=Math.random()<.5?'#f00':'#000';im.style.filter=Math.random()<.35?'invert(1)':'contrast(1.6)';requestAnimationFrame(f)})()}
 let over=false,time=0,nextFake=15,hbT=0,REP=1;
-function credits(win){const r=$('roll');r.innerHTML=`<h1 style="font-size:48px">ХАБАКИ</h1><p>${win?'Хабаки выбрались на свободу!':'Хабаки не пережили эту ночь...'}</p><p>Время в доме: ${Math.round(time)} сек</p><p>${myS().win?'🏆 Победа засчитана':'Победа не засчитана'} · прятался в шкафах: ${myS().h} раз · бонусов собрано: ${myS().k}${ACC.tok?'<br><small>✅ Статистика сохранена в аккаунте</small>':''}</p><br><b>В ГЛАВНЫХ РОЛЯХ</b><p>Арсен<br>Дамир</p><b>В РОЛИ МОНСТРОВ</b><p>Эйнштейн-монстр<br>Маньяк в маске<br>Зелёный танцующий огр<br>Бледный незнакомец</p><b>ПЕВЕЦ</b><p>Худай</p><b>ГУЛЬМЯКИ</b><p>Гульмяки</p><b>РЕЖИССЁР</b><p>Вы сами</p><b>МУЗЫКА И КРИКИ</b><p>Синтезатор вашего браузера</p><b>ОСОБАЯ БЛАГОДАРНОСТЬ</b><p>Всем, кто не оглядывался<br><br>👻 КОНЕЦ 👻</p>`;
+function credits(win){const r=$('roll');r.innerHTML=`<h1 style="font-size:48px">ХАБАКИ</h1><p>${win?'Хабаки выбрались на свободу!':'Хабаки не пережили эту ночь...'}</p><p>Время в доме: ${Math.round(time)} сек</p><p>${myS().win?'🏆 Победа засчитана':'Победа не засчитана'} · прятался в шкафах: ${myS().h} раз · бонусов собрано: ${myS().k}${ACC.tok?'<br><small>✅ Статистика сохранена в аккаунте</small>':''}</p><br><b>В ГЛАВНЫХ РОЛЯХ</b><p>Арсен<br>Дамир</p><b>В РОЛИ МОНСТРОВ</b><p>Эйнштейн-монстр<br>Маньяк в маске<br>Зелёный танцующий огр<br>Бледный незнакомец</p><b>ГУЛЬМЯКИ</b><p>Гульмяки</p><b>РЕЖИССЁР</b><p>Вы сами</p><b>МУЗЫКА</b><p>Hello Neighbor OST: Alpha 3 Intro · Evicted · Nostalgia<br>Dreams About the Man Next Door · Sprinting Down the Stairs</p><b>КРИКИ</b><p>Синтезатор вашего браузера</p><b>ОСОБАЯ БЛАГОДАРНОСТЬ</b><p>Всем, кто не оглядывался<br><br>👻 КОНЕЦ 👻</p>`;
  r.style.animation='none';r.offsetHeight;r.style.animation='';$('cr').style.display='flex';$('cr').style.background=win?'transparent':'#000'}
 function chk(){if(P.every(q=>q.out||!q.alive))finish(P.some(q=>q.out))}
 function finish(win){if(over)return;over=true;reportStats();if(NET.on&&NET.host)nEv("fin",[win?1:0]);setTimeout(()=>credits(win?1:0),win?30000:2400)}
@@ -462,7 +491,7 @@ function loop(now){requestAnimationFrame(loop);const dt=paused?0:Math.min((now-l
   mE.rotation.y=.3+Math.sin(tt*.8)*.15;mM.rotation.y=-.3+Math.sin(tt*.7)*.15;[mE,mM].forEach((m,i)=>{m.position.y=Math.sin(tt*1.5+i)*.15;m.userData.arms.forEach((a,j)=>a.rotation.x=-1.4+Math.sin(tt*2+j)*.12)});
   mcam.position.set(Math.sin(tt*.2)*5,4+Math.sin(tt*.3)*1.2,28-Math.sin(tt*.1)*3);mcam.lookAt(BG.lx,BG.ly,BG.lz);menuFx(dt);view(0,0,W,H,MS,mcam);return}
  if(state==='win'){fin(dt);view(0,0,W,H,HS,hcam);return}
- if(!over&&NET.on&&!NET.host){time+=dt;gApply()}else if(!over){time+=dt;
+ if(!over&&NET.on&&!NET.host){time+=dt;gApply(dt)}else if(!over){time+=dt;
   P.forEach((p,i)=>{if(!p.alive||p.out)return;p.hcd=(p.hcd||0)-dt;const tk=keys[i?'Slash':'KeyE'],w=wards.find(q=>Math.hypot(q.x-p.x,q.z-p.z)<2.8&&Math.abs(yoff(q.x)-yoff(p.x))<1);
   if(p.hid){p.hidt-=dt;if(p.rb&&p.cy!=null)p.a=p.cy;else p.a+=((keys[KEYS[i].l]?1:0)-(keys[KEYS[i].r]?1:0)+(p.tx||0))*2*dt;ovs[i].querySelector('.sp').textContent='🚪 В шкафу ('+Math.ceil(p.hidt)+'с) · ['+(i?'/':'E')+'] выйти';if(p.hidt<=0||(tk&&!p.hk)){p.hid=false;p.gr.visible=true;p.x=p.hx;p.z=p.hz;p.hcd=6}}
   else if(tk&&!p.hk&&w&&p.hcd<=0&&!p.dlg){p.hid=true;p.hidt=14;p.hx=p.x;p.hz=p.z;p.x=w.x;p.z=w.z;p.gr.visible=false;p.sh=(p.sh||0)+1;stat.hide++;sfx('creak')}
@@ -475,7 +504,7 @@ function loop(now){requestAnimationFrame(loop);const dt=paused?0:Math.min((now-l
    const dEx=Math.hypot(p.x-ctr(ex[0]),p.z-ctr(ex[1])),dW=Math.hypot(p.x-wdp.x,p.z-wdp.z),dB=Math.hypot(p.x-bkp.x,p.z-bkp.z);
    p.near=dEx<3.5?'открыть дверь на волю':dW<3.5&&!wardUsed?'войти в ПСИХУШКУ':dB<3.5&&reg(p.x)?'выход из психушки':'';p.rcd=(p.rcd||0)-dt;
    if(p.near&&(keys.KeyR||p.tr)&&p.rcd<=0){p.rcd=.8;p.tr=0;
-    if(dEx<3.5){sfx('creak');p.out=true;p.gr.visible=false;ovs[i].querySelector('.sp').textContent='🎉 СВОБОДА! Гуляйте по полю · '+(i?'↑↓←→ · Enter — прыжок':'WASD · Space — прыжок');song.volume=Math.min(1,S.music*.45);if(song.paused){song.currentTime=0;song.play().catch(()=>{})}ovs[i].querySelector('.dlg').style.display='none';chk()}
+    if(dEx<3.5){sfx('creak');p.out=true;p.gr.visible=false;ovs[i].querySelector('.sp').textContent='🎉 СВОБОДА! Гуляйте по полю · '+(i?'↑↓←→ · Enter — прыжок':'WASD · Space — прыжок');winPlay();ovs[i].querySelector('.dlg').style.display='none';chk()}
     else if(dW<3.5&&!wardUsed){sfx('creak');p.x=wardIn.x;p.z=wardIn.z;wardOn=true;scream(.5)}
     else if(dB<3.5&&reg(p.x)){p.x=wdp.x;p.z=wdp.z;wardUsed=true;wd.visible=false}}p.bat=Math.max(0,p.bat-dt*.9*S.drain);const lf=bo>0?0:Math.min(1,p.bat/25)*(p.bat<25&&Math.random()<.15?.2:1);p.li.intensity=bo>0?0:.25+Math.random()*.2;p.spt.intensity=3.4*lf;bats.children.slice().forEach(b=>{if(Math.hypot(b.position.x-p.x,b.position.z-p.z)<1.4){bats.remove(b);p.bat=Math.min(100,p.bat+45);msg(p,'🔋 +45% заряда');sfx('chime')}});bons.children.slice().forEach(b=>{if(Math.hypot(b.position.x-p.x,b.position.z-p.z)<1.4){bons.remove(b);p.sk=(p.sk||0)+1;stat.pick++;sfx('chime');const t=b.userData.t;if(t===0){p.sp=6;p.cd=0;msg(p,'🍬 Сладкий рывок!')}else if(t===1){fz=8;msg(p,'⏱ Монстры замедлены на 8 сек!')}else{beam.material.opacity=.45;beamT=12;msg(p,'👁 Дверь выхода подсвечена!')}}});ovs[i].querySelector('.sp').textContent=(p.sp>0?'⚡ БЕГ!':p.cd>0?'⚡ '+Math.ceil(p.cd)+'с':'⚡ ['+(i?5:4)+'] рывок')+' · 🔋'+Math.round(p.bat)+'%'+(p.near?' · [R] '+p.near:'')+(p.hw?' · ['+(i?'/':'E')+'] спрятаться в шкаф':'')});
   M.forEach((m,i)=>{if(!m.on&&(i<4?i<S.count&&time>m.at:wardOn)){const c=i>=4?rnd(free.filter(q=>q[0]>=WX)):far(P.map(p=>bfs(cc(p.x),cc(p.z))),45);m.x=ctr(c[0]);m.z=ctr(c[1]);m.g.position.set(m.x,0,m.z);m.g.visible=m.on=true;m.tg=rnd(P);if(i&&S.scares)P.forEach(p=>p.alive&&scare(p.i,350,false))}if(m.on)updMon(m,dt)});
@@ -486,27 +515,30 @@ function loop(now){requestAnimationFrame(loop);const dt=paused?0:Math.min((now-l
  pics.forEach(pc=>{if(!pc.done)P.forEach(p=>{if(p.alive&&!p.out&&Math.hypot(p.x-pc.x,p.z-pc.z)<3&&Math.abs(yoff(p.x)-yoff(pc.x))<1){pc.done=1;if(Math.random()<.5)scare(p.i,800,false,IMG.K)}})});
  P.forEach(p=>{p.sc=(p.sc||0)-dt;if(reg(p.x)&&p.alive&&!p.out&&p.sc<=0&&sick.some(q=>Math.hypot(q.position.x-p.x,q.position.z-p.z)<2.6)){p.sc=7;scare(p.i,500,false,IMG.E)}});
  fin(dt);P.forEach(p=>{p.gr.position.set(p.x,yoff(p.x)+(p.h||0),p.z);p.gr.rotation.y=p.a});
- P.forEach((p,i)=>{let fx=Math.sin(p.a),fz=Math.cos(p.a);let d=3;while(d>.6&&blk(p.x-fx*d,p.z-fz*d,.3))d-=.3;
+ dynAudio(dt);P.forEach((p,i)=>{let fx=Math.sin(p.a),fz=Math.cos(p.a);let d=3;while(d>.6&&blk(p.x-fx*d,p.z-fz*d,.3))d-=.3;
   const yo=yoff(p.x)+(p.h||0)*.6;if(p.rb&&!p.hid&&p.cy!=null){fx=Math.sin(p.cy);fz=Math.cos(p.cy)}const cp=p.rb&&!p.hid?(p.cp||0):0;if(p.hid){p.cam.position.set(p.x,yoff(p.x)+2.2,p.z);p.cam.lookAt(p.x+fx*3,yoff(p.x)+2.1,p.z+fz*3)}else{p.cam.position.set(p.x-fx*d,yo+4.2+cp*3,p.z-fz*d);p.cam.lookAt(p.x+fx*3,yo+1.3-cp*1.2,p.z+fz*3)}
+  if(p.shk>.01&&S.shk){const a=p.shk,cm=p.cam;cm.position.x+=(Math.random()-.5)*.16*a;cm.position.y+=(Math.random()-.5)*.12*a;cm.position.z+=(Math.random()-.5)*.16*a;cm.rotateZ((Math.random()-.5)*.045*a);cm.rotateX((Math.random()-.5)*.02*a)}
   const sl=solo();if(sl&&i!==nMe())return;view(sl?0:land?i*W/2:0,sl?0:land?0:(1-i)*H/2,sl?W:land?W/2:W,sl?H:land?H:H/2,p.out?HS:scene,p.out?hcams[i]:p.cam)})}
 requestAnimationFrame(loop);
 $('enter').onclick=()=>{audioInit();AC.resume();$('splash').style.display='none';boot()};
 $('play').onclick=()=>{$('mm').style.display='none';$('pick').style.display='flex'};$('set').onclick=()=>{$('mm').style.display='none';$('sp').style.display='flex'};$('back').onclick=()=>{$('sp').style.display='none';$('mm').style.display='flex'};
 $('s_ag').onchange=e=>S.aggr=+e.target.value;$('s_cnt').onchange=e=>S.count=+e.target.value;$('s_sc').onchange=e=>S.scares=+e.target.value;
-$('s_mu').oninput=e=>{S.music=+e.target.value;if(mg)mg.gain.value=S.music};$('s_sf').oninput=e=>S.sfx=+e.target.value;
+$('s_mu').oninput=e=>{S.music=+e.target.value;if(mg)mg.gain.value=S.music;applyVol()};$('s_sf').oninput=e=>S.sfx=+e.target.value;
 $('hw').onclick=()=>{$('mm').style.display='none';$('how').style.display='block'};$('hb2').onclick=()=>{$('how').style.display='none';$('mm').style.display='flex'};let paused=false,songWas=false;
-function save(){try{localStorage.setItem('habaki',JSON.stringify(S))}catch(e){}}
+function save(){try{localStorage.setItem('habaki',JSON.stringify(MB?Object.assign({},S,MB):S))}catch(e){}}
 try{Object.assign(S,JSON.parse(localStorage.getItem('habaki')||'{}'))}catch(e){}
-if(S.bg===4)S.bg=0;if(S.ver!==2){S.ver=2;S.q=window.TOUCH0?Math.max(+S.q||1.25,1.25):2;save()}
-const SETS=[['s_ag','aggr'],['s_cnt','count'],['s_sc','scares'],['s_mu','music'],['s_sf','sfx'],['s_bg','bg'],['s_mu2','mus'],['s_br','bright'],['s_ps','pspd'],['s_dr','drain'],['s_ev','events'],['s_bn','bonN'],['s_st','steps'],['s_am','amb'],['s_tc','touch'],['s_pl','players'],['s_cs','csize'],['s_q','q'],['s_vb','vib']];
-SETS.forEach(([id,k])=>{const e=$(id);e.value=S[k];const f=()=>{S[k]=+e.value;if(k==='bg')setBg(S.bg);if(k==='mus')setMode(mode);if(k==='bright')renderer.toneMappingExposure=S.bright;if(k==='q'){renderer.setPixelRatio(PR());layout()}if(k==='music'&&mg)mg.gain.value=S.music;save()};e.addEventListener('change',f);e.addEventListener('input',f)});
+if(S.bg===4)S.bg=0;if(S.mv!==2){S.mv=2;if(S.mus===3)S.mus=0;else if(S.mus===4)S.mus=5}if(S.ver!==2){S.ver=2;S.q=window.TOUCH0?Math.max(+S.q||1.25,1.25):2;save()}
+const SETS=[['s_ag','aggr'],['s_cnt','count'],['s_sc','scares'],['s_mu','music'],['s_sf','sfx'],['s_bg','bg'],['s_mu2','mus'],['s_br','bright'],['s_ps','pspd'],['s_dr','drain'],['s_ev','events'],['s_bn','bonN'],['s_st','steps'],['s_am','amb'],['s_tc','touch'],['s_pl','players'],['s_cs','csize'],['s_q','q'],['s_vb','vib'],['s_gm','gm'],['s_shk','shk']];
+SETS.forEach(([id,k])=>{const e=$(id);e.value=S[k];const f=()=>{S[k]=+e.value;if(k==='bg')setBg(S.bg);if(k==='mus')setMode(mode);if(k==='bright')renderer.toneMappingExposure=S.bright;if(k==='q'){renderer.setPixelRatio(PR());layout()}if(k==='music'&&mg)mg.gain.value=S.music;if(k==='music')applyVol();save()};e.addEventListener('change',f);e.addEventListener('input',f)});
 renderer.toneMappingExposure=S.bright;renderer.setPixelRatio(PR());setBg(S.bg);
+function gmShow(){const m=MODES[S.gm|0]||MODES[0];$('gmd').textContent=m.d;$('gm2').value=S.gm|0;$('s_gm').value=S.gm|0}
+$('gm2').onchange=e=>{S.gm=+e.target.value;save();gmShow()};$('s_gm').addEventListener('change',gmShow);gmShow();
 $('s_bgf').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>loader.load(r.result,t=>{customBG=t;S.bg=4;$('s_bg').value=4;setBg(4)});r.readAsDataURL(f)};
 $('rst').onclick=()=>{try{localStorage.removeItem('habaki')}catch(e){}location.reload()};
 function togglePause(){if(state!=='play')return;paused=!paused;for(const k in keys)keys[k]=0;$('pause').style.display=paused?'flex':'none';
- if(paused){$('p_mu').value=S.music;$('p_sf').value=S.sfx;songWas=!song.paused;song.pause();if(AC)AC.suspend()}else{if(AC)AC.resume();if(songWas)song.play().catch(()=>{})}}
+ if(paused){$('p_mu').value=S.music;$('p_sf').value=S.sfx;pauseAud(true);if(AC)AC.suspend()}else{if(AC)AC.resume();pauseAud(false)}}
 $('pres').onclick=togglePause;$('pmenu').onclick=()=>{reportStats();if(NET.on)netLeave();paused=false;$('pause').style.display='none';if(AC)AC.resume();$('cr').style.display='none';showMenu()};
-$('p_mu').oninput=e=>{S.music=+e.target.value;if(mg)mg.gain.value=S.music;$('s_mu').value=S.music;save()};$('p_sf').oninput=e=>{S.sfx=+e.target.value;$('s_sf').value=S.sfx;save()};
+$('p_mu').oninput=e=>{S.music=+e.target.value;if(mg)mg.gain.value=S.music;$('s_mu').value=S.music;applyVol();save()};$('p_sf').oninput=e=>{S.sfx=+e.target.value;$('s_sf').value=S.sfx;save()};
 $('again').onclick=startGame;$('tomenu').onclick=()=>{$('cr').style.display='none';$('bd').style.display='none';showMenu()};
 
 /* ===== MOBILE ===== */
@@ -515,7 +547,7 @@ function solo(){return NET.on||S.players==1||S.players==3||(S.players==0&&touchO
 var CTL;
 function sizeCtl(){ovs.forEach(o=>{const r=o.getBoundingClientRect();o.style.setProperty('--u',Math.max(3,Math.min(r.width,r.height)/100)*S.csize+'px')})}
 function layout(){const W=innerWidth,H=innerHeight,land=W>=H,so=solo();renderer.setSize(W,H);ovs.forEach((o,i)=>{const t=o.style;o.classList.toggle('off',so&&i!=nMe());if(so){t.left=t.top='0';t.width=t.height='100%'}else{t.left=land?i*50+'%':'0';t.width=land?'50%':'100%';t.top=land?'0':i*50+'%';t.height=land?'100%':'50%'}});document.body.classList.toggle('touch',touchOn());sizeCtl()}
-function startGame(){layout();const R0=Math.random;if(NET.seed!=null){let a=NET.seed>>>0;Math.random=()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}try{startGame0()}finally{Math.random=R0}NET.seed=null;if(solo()&&!NET.on){const p=P[1-nMe()];p.alive=false;p.gr.visible=false}}
+function startGame(){if(!(NET.on&&!NET.host))modeApply();layout();const R0=Math.random;if(NET.seed!=null){let a=NET.seed>>>0;Math.random=()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}try{startGame0()}finally{Math.random=R0}NET.seed=null;if(solo()&&!NET.on){const p=P[1-nMe()];p.alive=false;p.gr.visible=false}}
 const ACT={door:['🚪','ОТКРЫТЬ'],ward:['🏥','ВОЙТИ'],back:['↩','ВЫХОД'],hide:['🗄','В ШКАФ'],out:['⬅','ВЫЙТИ'],none:['✋','']};
 const vib=n=>{if(S.vib&&navigator.vibrate)try{navigator.vibrate(n)}catch(e){}};
 CTL=P.map((p,i)=>{const o=ovs[i],t=document.createElement('div');t.className='tc';
@@ -553,9 +585,9 @@ $('enter').addEventListener('click',()=>{if(touchOn())goFS()});
 addEventListener('orientationchange',()=>setTimeout(layout,250));layout();
 
 /* ===== MUSIC ===== */
-const TRK=['Мрачный эмбиент','Шкатулка-колыбельная','Тревожный пульс','Песня Худая','Без музыки'];
+const TRK=['Мрачный эмбиент','Шкатулка-колыбельная','Тревожный пульс','Alpha 3 Intro','Evicted','Без музыки'];
 function setTrk(v){S.mus=v;$('s_mu2').value=v;$('p_trk').value=v;save();setMode(mode)}
-function nextTrk(){setTrk((S.mus+1)%5);if(state==='play')msg(P[nMe()],'♪ '+TRK[S.mus])}
+function nextTrk(){setTrk((S.mus+1)%6);if(state==='play')msg(P[nMe()],'♪ '+TRK[S.mus])}
 $('p_trk').value=S.mus;$('p_trk').onchange=e=>setTrk(+e.target.value);$('nxt').onclick=nextTrk;$('s_mu2').addEventListener('change',()=>$('p_trk').value=S.mus);
 const mb=document.createElement('div');mb.id='mb';mb.textContent='♪';document.body.append(mb);mb.onpointerdown=e=>{e.preventDefault();nextTrk()};
 setInterval(()=>{mb.style.display=pb.style.display},200);
@@ -570,7 +602,7 @@ function onEv(t,d){
  else if(t==='mg')msg(P[1],d[0]);
  else if(t==='fin')finish(!!d[0]);
  else if(t==='talk'){const dl=ovs[1].querySelector('.dlg');dl.style.display='block';dl.innerHTML='<div style="font-size:20px;color:#ccd">👁 Бледный: «'+d[0]+'»</div>';d[1].forEach((o,k)=>{const b=document.createElement('button');b.textContent=(k+1)+'. '+o[0];b.onclick=()=>{dl.style.display='none';nEv('ch',[o[1]]);msg(P[1],o[1]?'Бледный кивнул...':'Бледный: «Не так...»')};dl.append(b)})}}
-function netStart(){NET.seed=Math.floor(Math.random()*2147483647);nEv('start',[NET.seed,[S.aggr,S.count,S.scares,S.bonN,S.drain,S.events,S.pspd,S.amb]]);startGame()}
+function netStart(){modeApply();NET.seed=Math.floor(Math.random()*2147483647);nEv('start',[NET.seed,[S.aggr,S.count,S.scares,S.bonN,S.drain,S.events,S.pspd,S.amb]]);startGame()}
 function netLeave(){try{NET.room&&NET.room.leave()}catch(e){}NET.room=null;NET.on=false;NET.host=false;layout()}
 async function netJoin(code,host){const R=WSROOM,st=$('ns');if(location.protocol==='file:'){st.textContent='Онлайн работает, когда игра открыта с сервера (npm start)';return}
  st.textContent='Подключение...';try{NET.room=await R.join('habaki-'+code,host)}catch(e){const m=e&&e.message;st.textContent=m==='noroom'?'Игры с таким кодом нет':m==='full'?'Комната занята':m==='taken'?'Код занят — нажмите ещё раз':'Не удалось подключиться к серверу';return}
@@ -578,9 +610,10 @@ async function netJoin(code,host){const R=WSROOM,st=$('ns');if(location.protocol
  st.textContent=host?'Код: '+code+' — назовите его другу. Ждём...':'Подключились. Ждём, пока хозяин начнёт...';
  NET.room.onPeers(ch=>{ch.peers.forEach(pr=>{if(pr.isMe)return;const pv=pr.presence||{};if(host){if(pv.k)NET.inp=pv.k}else if(pv.s)NET.snap=pv.s;(pv.ev||[]).forEach(e=>{if(e.n>(NET.seen[pr.peer]||0)){NET.seen[pr.peer]=e.n;onEv(e.t,e.d)}})});
   if(host&&state!=='play'&&ch.joined.some(p=>!p.isMe)){st.textContent='Друг подключился! Начинаем...';setTimeout(netStart,900)}})}
-function gApply(){const s=NET.snap;if(!s)return;s.P.forEach((a,i)=>{const p=P[i];p.x=a[0];p.z=a[1];p.a=a[2];p.h=a[3];p.hid=a[4];p.out=!!a[5];p.alive=!!a[6];p.bat=a[7];p.sp=a[8];p.cd=a[9];p.near=a[10];p.hw=a[11];p.hcd=a[12];p.hidt=a[13];p.spt.intensity=a[14];p.sh=a[15];p.sk=a[16];p.li.intensity=a[14]?.35:0;p.gr.visible=!a[4]&&!a[5]&&!!a[6]});
- s.M.forEach((a,i)=>{const m=M[i];m.on=!!a[2];m.g.visible=m.on;m.g.position.set(a[0],yoff(a[0]),a[1]);m.g.rotation.y=a[3]});
- npc.g.position.set(s.n[0],yoff(s.n[0]),s.n[1]);npc.g.rotation.y=s.n[2];wd.visible=!!s.w[1];beam.material.opacity=s.w[3]?.45:0;
+function gApply(dt){const s=NET.snap;if(!s)return;const k=1-Math.exp(-(dt||.016)*22),sm=(c,t)=>Math.abs(t-c)>4?t:c+(t-c)*k,sa=(c,t)=>c+Math.atan2(Math.sin(t-c),Math.cos(t-c))*k;
+ s.P.forEach((a,i)=>{const p=P[i];p.x=sm(p.x,a[0]);p.z=sm(p.z,a[1]);p.a=sa(p.a,a[2]);p.h=a[3];p.hid=a[4];p.out=!!a[5];p.alive=!!a[6];p.bat=a[7];p.sp=a[8];p.cd=a[9];p.near=a[10];p.hw=a[11];p.hcd=a[12];p.hidt=a[13];p.spt.intensity=a[14];p.sh=a[15];p.sk=a[16];p.li.intensity=a[14]?.35:0;p.gr.visible=!a[4]&&!a[5]&&!!a[6]});
+ s.M.forEach((a,i)=>{const m=M[i],was=m.on,g=m.g.position;m.on=!!a[2];m.g.visible=m.on;const nx=(!was||Math.abs(a[0]-g.x)>4||Math.abs(a[1]-g.z)>4)?a[0]:g.x+(a[0]-g.x)*k,nz=(!was||Math.abs(a[0]-g.x)>4||Math.abs(a[1]-g.z)>4)?a[1]:g.z+(a[1]-g.z)*k;g.set(nx,yoff(nx),nz);m.g.rotation.y=sa(m.g.rotation.y,a[3])});
+ {const g=npc.g.position,far=Math.abs(s.n[0]-g.x)>4||Math.abs(s.n[1]-g.z)>4,nx=far?s.n[0]:g.x+(s.n[0]-g.x)*k,nz=far?s.n[1]:g.z+(s.n[1]-g.z)*k;g.set(nx,yoff(nx),nz);npc.g.rotation.y=sa(npc.g.rotation.y,s.n[2])}wd.visible=!!s.w[1];beam.material.opacity=s.w[3]?.45:0;
  [[bats,s.bl],[bons,s.bn]].forEach(([g,l])=>g.children.slice().forEach(c=>{if(!l.some(q=>Math.abs(q[0]-c.position.x)<.2&&Math.abs(q[1]-c.position.z)<.2))g.remove(c)}))}
 addEventListener('keydown',e=>{if(NET.on&&!NET.host&&!e.repeat&&!(e.target&&/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))){const c=al(e.code);if(c==='Enter')NET.jc++;if(c==='Digit5')NET.dc++;if(c==='Slash')NET.ac++}});
 CTL[1].q('.bj').addEventListener('pointerdown',()=>NET.jc++);CTL[1].q('.bd').addEventListener('pointerdown',()=>NET.dc++);CTL[1].q('.ba').addEventListener('pointerdown',()=>NET.ac++);
@@ -592,7 +625,7 @@ setInterval(()=>{if(!NET.on||!NET.room||state!=='play')return;
  },50);
 setInterval(()=>{if(!NET.on||!NET.room||state!=='play')return;
  if(NET.host)NET.room.presence({s:{P:P.map(p=>[rd(p.x),rd(p.z),rd(p.a),rd(p.h||0),p.hid?1:0,p.out?1:0,p.alive?1:0,Math.round(p.bat),p.sp>0?1:0,rd(p.cd||0),p.near||'',p.hw?1:0,rd(p.hcd||0),rd(p.hidt||0),rd(p.spt.intensity),p.sh|0,p.sk|0]),M:M.map(m=>[rd(m.x),rd(m.z),m.on?1:0,rd(m.g.rotation.y)]),n:[rd(npc.x),rd(npc.z),rd(npc.g.rotation.y)],w:[wardOn?1:0,wd.visible?1:0,bo>0?1:0,beamT>0?1:0],bl:bats.children.map(c=>[rd(c.position.x),rd(c.position.z)]),bn:bons.children.map(c=>[rd(c.position.x),rd(c.position.z)])}}).catch(()=>{});
- else{const q=P[1],cl=v=>Math.max(-1,Math.min(1,v));NET.room.presence({k:[rd(cl((q.tx||0)+(keys.ArrowLeft?1:0)-(keys.ArrowRight?1:0))),rd(cl((q.ty||0)+(keys.ArrowUp?1:0)-(keys.ArrowDown?1:0))),NET.jc,NET.dc,NET.ac,q.rb?rd(q.cy||0):0,q.rb?rd(q.mx||0):0,q.rb?rd(q.my||0):0,q.rb?1:0]}).catch(()=>{})}},80);
+ else{const q=P[1],cl=v=>Math.max(-1,Math.min(1,v));NET.room.presence({k:[rd(cl((q.tx||0)+(keys.ArrowLeft?1:0)-(keys.ArrowRight?1:0))),rd(cl((q.ty||0)+(keys.ArrowUp?1:0)-(keys.ArrowDown?1:0))),NET.jc,NET.dc,NET.ac,q.rb?rd(q.cy||0):0,q.rb?rd(q.mx||0):0,q.rb?rd(q.my||0):0,q.rb?1:0]}).catch(()=>{})}},40);
 $('onl').onclick=()=>{$('mm').style.display='none';$('net').style.display='block';$('ns').textContent=''};
 $('nb').onclick=()=>{netLeave();$('net').style.display='none';$('mm').style.display='flex'};
 $('nh').onclick=()=>netJoin(String(1000+Math.floor(Math.random()*9000)),true);

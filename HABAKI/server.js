@@ -204,11 +204,19 @@ const server = http.createServer((req, res) => {
   if (url.startsWith('/api/')) return api(req, res, url);
   let f = path.normalize(path.join(PUB, url === '/' ? 'index.html' : url));
   if (f !== PUB && !f.startsWith(PUB + path.sep)) { res.writeHead(403); return res.end(); }
-  fs.readFile(f, (err, data) => {
-    if (err) { res.writeHead(404); return res.end('404'); }
+  fs.stat(f, (err, st) => {
+    if (err || !st.isFile()) { res.writeHead(404); return res.end('404'); }
     const ext = path.extname(f);
-    res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream', 'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=3600' });
-    res.end(data);
+    const h = { 'Content-Type': MIME[ext] || 'application/octet-stream', 'Accept-Ranges': 'bytes', 'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=3600' };
+    const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+    if (m && (m[1] || m[2])) { // нужен для аудио в Safari/iOS
+      const a = m[1] ? +m[1] : Math.max(0, st.size - +m[2]), b = m[1] && m[2] ? Math.min(+m[2], st.size - 1) : st.size - 1;
+      if (a > b || a >= st.size) { res.writeHead(416, { 'Content-Range': 'bytes */' + st.size }); return res.end(); }
+      res.writeHead(206, { ...h, 'Content-Range': `bytes ${a}-${b}/${st.size}`, 'Content-Length': b - a + 1 });
+      return fs.createReadStream(f, { start: a, end: b }).on('error', () => res.destroy()).pipe(res);
+    }
+    res.writeHead(200, { ...h, 'Content-Length': st.size });
+    fs.createReadStream(f).on('error', () => res.destroy()).pipe(res);
   });
 });
 
@@ -230,7 +238,7 @@ function broadcast(name) {
   }
 }
 const pending = new Set(); // комнаты, ожидающие рассылки (склеиваем частые обновления)
-setInterval(() => { for (const n of pending) broadcast(n); pending.clear(); }, 40);
+setInterval(() => { for (const n of pending) broadcast(n); pending.clear(); }, 33);
 
 wss.on('connection', (ws, req) => {
   const id = 'p' + (++peerSeq);
